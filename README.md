@@ -1,18 +1,32 @@
-# 🔥 RedSnow Reconnaissance & OSINT Toolkit (CEH Lab Environment)
+# 🔥 RedSnow Reconnaissance & OSINT Toolkit
 
-> A cutting-edge, professional multi-vector reconnaissance engine and OSINT platform designed for Cybersecurity Experts, Red Teamers, and SocOps Researchers.
+> An advanced browser-based reconnaissance and OSINT simulation environment for Cybersecurity Researchers. Features interactive threat analysis, simulated network probes, and an AI-powered Cyber Mentor.
 
-![App Dashboard Screenshot](screenshot1.png)
-*(Screenshot 1 - Security Terminal & Operations Center)*
+🌐 **Live Demo:** [https://red-snow.github.io/redsnow-recon-toolkit/](https://red-snow.github.io/redsnow-recon-toolkit/)
 
-![Vector Analysis Screenshot](screenshot2.png)
-*(Screenshot 2 - Vector Analysis Map & Exploit Sequences)*
+<br>
+
+<div align="center">
+  <img src="screenshot1.png" alt="Security Terminal & Operations Center" width="100%">
+  <br>
+  <em>Security Terminal & Operations Center</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="screenshot2.png" alt="Vector Analysis Map & Exploit Sequences" width="100%">
+  <br>
+  <em>Vector Analysis Map & Exploit Sequences</em>
+</div>
+
+<br>
 
 ## 📖 Overview
 
 The **RedSnow Reconnaissance & OSINT Toolkit** is a sleek, unified, browser-based simulation environment crafted for execution and visualization of network attacks, intelligence gathering, and infrastructure topography. Originally conceptualized as an advanced CEH (Certified Ethical Hacker) Lab, this terminal empowers researchers to run multi-vector probes, analyze vulnerabilities, generate expert tactical intel reports, and perform highly-targeted Open Source Intelligence (OSINT).
 
-Built with an ultra-responsive dark-mode interface, it replicates authentic terminal latency, interactive exploitation (Metasploit), and live topological data parsing logic.
+Built with an ultra-responsive dark-mode interface, it replicates authentic terminal latency, interactive exploitation (Metasploit), and live topological data parsing logic. This project utilizes a "Bring Your Own Key" (BYOK) architecture to securely integrate with the Google Gemini API for threat analysis directly on the client-side.
 
 ## 🚀 Key Features
 
