@@ -1072,9 +1072,19 @@ export default function App() {
 
                 <div className="space-y-6">
                   <div className="p-4 border border-yellow-500/20 bg-yellow-500/5 rounded-xs">
-                    <p className="text-yellow-500/80 text-xs flex items-start gap-3">
-                      <Info size={16} className="shrink-0 mt-0.5" />
-                      To enable the AI Cyber Mentor and automated intelligence reports, please provide your own Google Gemini API key. Your key is securely stored in your browser's local storage and is never transmitted anywhere except directly to Google's API.
+                    <p className="text-yellow-500/80 text-xs flex flex-col gap-3">
+                      <span className="flex items-start gap-3">
+                        <Info size={16} className="shrink-0 mt-0.5" />
+                        To enable the AI Cyber Mentor and automated intelligence reports, please provide your own Google Gemini API key. Your key is securely stored in your browser's local storage and is never transmitted anywhere except directly to Google's API.
+                      </span>
+                      <a 
+                        href="https://aistudio.google.com/app/apikey" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-[#00FF00] hover:underline font-bold"
+                      >
+                        <Globe size={14} /> Get your API Key from Google AI Studio
+                      </a>
                     </p>
                   </div>
 
