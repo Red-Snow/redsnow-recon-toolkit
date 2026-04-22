@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#030303] text-[#E0E0E0] font-sans antialiased overflow-hidden;
+    /* Simplified background pattern - less heavy than multiple gradients */
+    background-image: 
+      linear-gradient(rgba(0, 255, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 0, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer components {
+  .cyber-panel {
+    /* Removed backdrop-blur as it's very expensive */
+    @apply bg-[#080808] border border-[#00FF00]/10 rounded-xs relative overflow-hidden;
+  }
+
+  .cyber-panel::after {
+    /* Optimization: Remove expensive nested gradients for simpler overlay */
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-10;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  }
+
+  .markdown-body {
+    @apply text-[#E0E0E0] leading-relaxed;
+  }
+  
+  .markdown-body h1 {
+    @apply text-4xl font-display font-bold mb-8 border-b border-[#00FF00]/20 pb-4 text-[#00FF00] uppercase tracking-tighter;
+  }
+  
+  .markdown-body h2 {
+    @apply text-xl font-display font-bold mt-12 mb-6 text-[#00FF00]/80 uppercase tracking-tight flex items-center gap-3;
+  }
+
+  .markdown-body h2::before {
+    content: '>';
+    @apply text-[#00FF00] font-mono;
+  }
+  
+  .markdown-body h3 {
+    @apply text-lg font-display font-bold mt-8 mb-4 text-[#00FF00]/60 uppercase;
+  }
+  
+  .markdown-body p {
+    @apply mb-4 opacity-80 font-sans text-sm;
+  }
+  
+  .markdown-body ul {
+    @apply list-none mb-6 space-y-2 opacity-80 text-sm;
+  }
+
+  .markdown-body ul li {
+    @apply pl-4 relative;
+  }
+
+  .markdown-body ul li::before {
+    content: '■';
+    @apply absolute left-0 text-[#00FF00]/40 text-[8px] top-1.5;
+  }
+  
+  .markdown-body code {
+    @apply bg-[#1A1A1A] text-[#00FF00] px-1.5 py-0.5 font-mono text-[10px] rounded-xs border border-[#00FF00]/20;
+  }
+  
+  .markdown-body pre {
+    @apply bg-[#020202] text-[#00FF00] p-6 font-mono text-[11px] overflow-x-auto mb-8 rounded-xs border border-[#00FF00]/10 shadow-[0_0_30px_rgba(0,255,0,0.05)];
+  }
+
+  .markdown-body table {
+    @apply w-full mb-8 text-sm text-left border-collapse;
+  }
+
+  .markdown-body th {
+    @apply bg-[#0A0A0A] text-[#00FF00]/80 font-mono font-bold text-[10px] uppercase tracking-widest px-4 py-3 border-b border-[#00FF00]/20;
+  }
+
+  .markdown-body td {
+    @apply px-4 py-3 border-b border-[#00FF00]/10 opacity-80;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#030303];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#00FF00]/10 hover:bg-[#00FF00]/30 transition-colors rounded-full;
+}
+
+.glow-green {
+  /* Simplified shadow */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+}
+
+/* Optimization: Removed expensive terminal-scanline overlay */
+
+.glitch-text {
+  /* Simplified text effect */
+  @apply tracking-tight font-bold;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px) translateX(0); opacity: 1; }
+  100% { transform: translateY(80px) translateX(15px); opacity: 0; }
+}
+
+.snow-flake {
+  @apply absolute bg-red-500 rounded-full pointer-events-none;
+}
